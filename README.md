@@ -1,4 +1,4 @@
-# HashCheck
+# hash
 A simple drag and drop hash checker for the Hypixel Skyblock community. Will hopefully be active and up-to-date. Pull requests are welcome. We use `SHA256`.
 
 ## Disclaimer
