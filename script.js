@@ -10,12 +10,12 @@ const results = document.querySelector("#results");
 
 document.querySelector("*").addEventListener("dragover", e => {
     e.preventDefault()
-    e.dataTransfer.dropEffect = 'copy'
+    e.dataTransfer.dropEffect = "copy"
 })
 
 document.querySelector("*").addEventListener("drop", e => {
-    results.innerText = "Loading..."
     e.preventDefault()
+    results.innerText = "Loading..."
     if (e.dataTransfer.getData("URL") != "") {
         results.innerText = "Links aren't supported due to CORS."
     } else {
@@ -26,10 +26,10 @@ document.querySelector("*").addEventListener("drop", e => {
             collection.forEach(c => {
                 if (c.hash == CryptoJS.SHA256(fileReader.result).toString()) {
                     entry = c.name
-                    results.innerHTML = `File matches SHA256 hash of <b>${entry}</b>`
+                    results.innerHTML = `File matches SHA256 hash of <b style="color: lime;">${entry}</b>`
                 }
             })
-            if (!entry) results.innerText = "File doesn't match any known hashes."
+            if (!entry) results.innerHTML = "File <b style=\"color: red;\">doesn't match</b> any known SHA256 hashes."
 
             results.innerHTML += `<br><i>${CryptoJS.SHA256(fileReader.result).toString()}</i>`
         }
