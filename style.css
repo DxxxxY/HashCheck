@@ -19,3 +19,28 @@ input {
     width: 100vw;
     height: 100vh;
 }
+
+p {
+    margin: 0;
+    position: absolute;
+}
+
+#discord {
+    right: 0px;
+    top: 0px;
+}
+
+#dupe {
+    left: 0px;
+    top: 0px;
+}
+
+#author {
+    right: 0px;
+    bottom: 0px;
+}
+
+#hash {
+    left: 0px;
+    bottom: 0px;
+}

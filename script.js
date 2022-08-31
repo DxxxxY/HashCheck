@@ -16,6 +16,18 @@ const collection = [{
 }, {
     name: "SkyblockAddons-1.7.0-for-MC-1.8.9.jar",
     hash: "cd4f32c651f4b67555281ad31091e70ffe699d829ec310869b5eb35c7bb64825"
+}, {
+    name: "RoseGoldAddons-2.9.8.jar",
+    hash: "9780cb5cbe6da63c888b213b8e0bdb1611db0a38369fb9d84e0f4fe208361b29"
+}, {
+    name: "ChromaHUD-3.0.jar",
+    hash: "78a2bcbc457f327c3127e1be32c4fccd3a24e87f0f94945535840c4d04a441b0"
+}, {
+    name: "SkySkipped-3.3.jar",
+    hash: "6ba91da42339edcee09f8ad8b40233cd3cf414d3862c199015448d130928ec16"
+}, {
+    name: "aiomacro-1.7.2-release.jar",
+    hash: "58fefe77f5c9b60a2eddcbcfd4aa54f9f4834c2d10a2e8e7fb5fba7ddf8704b3"
 }]
 
 const results = document.querySelector("#results");
