@@ -28,6 +28,12 @@ const collection = [{
 }, {
     name: "aiomacro-1.7.2-release.jar",
     hash: "58fefe77f5c9b60a2eddcbcfd4aa54f9f4834c2d10a2e8e7fb5fba7ddf8704b3"
+}, {
+    name: "FarmHelper-v4.2.10.jar",
+    hash: "f69b05550bdbfd5bce7c452544b5b3a894eefdf0f0c61c8615968c92369e3c01"
+}, {
+    name: "FarmHelper-Bot-v1.0.3.jar",
+    hash: "f0b9abaa26a49c15ea8ff0450c6c4c6ce99e4f050fbaac15b084bfe8e9ed2846"
 }]
 
 const results = document.querySelector("#results");
