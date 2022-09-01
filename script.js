@@ -52,6 +52,9 @@ const collection = [{
 }, {
     name: "SkyblockClient-1.3.11.exe",
     hash: "8ebba7fb74c74f5c613e1c1b869222d22fef455f23e3d455564acbae12f8bc01"
+}, {
+    name: "MightyMiner.alpha-v0.2.6.jar",
+    hash: "938bbbee639d98afca4cfb1c2763d88634894b425aec6046b28f59dd3066ec8b"
 }]
 
 const results = document.querySelector("#results");
