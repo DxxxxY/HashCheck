@@ -49,6 +49,9 @@ const collection = [{
 }, {
     name: "TokenAuth-1.0.0.jar", //no validation
     hash: "6b1962f181d200754c61e4f678dc3f35f56270bccca6bc324c6a6a16fc163adf"
+}, {
+    name: "SkyblockClient-1.3.11.exe",
+    hash: "8ebba7fb74c74f5c613e1c1b869222d22fef455f23e3d455564acbae12f8bc01"
 }]
 
 const results = document.querySelector("#results");
