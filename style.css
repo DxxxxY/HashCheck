@@ -20,17 +20,23 @@ input {
     height: 100vh;
 }
 
+a {
+    text-decoration: none;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
 p {
     margin: 0;
     position: absolute;
 }
 
-#discord {
+#qolhub {
     right: 0px;
     top: 0px;
 }
 
-#dupe {
+#discord {
     left: 0px;
     top: 0px;
 }

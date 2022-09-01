@@ -34,9 +34,25 @@ const collection = [{
 }, {
     name: "FarmHelper-Bot-v1.0.3.jar",
     hash: "f0b9abaa26a49c15ea8ff0450c6c4c6ce99e4f050fbaac15b084bfe8e9ed2846"
+}, {
+    name: "ShadyAddons-2.7.2.jar",
+    hash: "f82f160b0c6f21e51b0be98cd6289d72abb609b7d84b82e9666ab9e9c83fdedd"
+}, {
+    name: "Skytils-1.2.6.jar",
+    hash: "02c101bf7b92462c3ff399071ef09cb528f705269aaa036e8a959f8424ee5b7c"
+}, {
+    name: "Hephaestus-2.0-RELEASE.jar",
+    hash: "71016fb45ff1f5eef9b358f3ebe4e07b8926f4f30ac5e5446ac976e62bdc34a6"
+}, {
+    name: "TokenAuth-1.0.0.jar",
+    hash: "1efdb8d5e0fc635d365a33648923795aeb8d306e0e133e0483fece8fd95b45a5"
+}, {
+    name: "TokenAuth-1.0.0.jar", //no validation
+    hash: "6b1962f181d200754c61e4f678dc3f35f56270bccca6bc324c6a6a16fc163adf"
 }]
 
 const results = document.querySelector("#results");
+document.querySelector("#hash").innerHTML += ` (${collection.length} file entries)`;
 
 document.querySelector("*").addEventListener("dragover", e => {
     e.preventDefault()
@@ -50,7 +66,8 @@ document.querySelector("*").addEventListener("drop", e => {
         results.innerText = "Links aren't supported due to CORS."
     } else {
         const fileReader = new FileReader()
-        fileReader.readAsBinaryString(e.dataTransfer.files[0])
+        const file = e.dataTransfer.files[0]
+        fileReader.readAsBinaryString(file)
         fileReader.onload = () => {
             const hash = CryptoJS.SHA256(CryptoJS.enc.Latin1.parse(fileReader.result)).toString()
             let entry
@@ -60,7 +77,11 @@ document.querySelector("*").addEventListener("drop", e => {
                     results.innerHTML = `File matches SHA256 hash of <b style="color: lime;">${entry}</b>`
                 }
             })
-            if (!entry) results.innerHTML = "File <b style=\"color: red;\">doesn't match</b> any known SHA256 hashes."
+            if (!entry) {
+                results.innerHTML = "File <b style=\"color: red;\">doesn't match</b> any known SHA256 hashes."
+                if (/session|login|token/.test(file.name.toLowerCase())) results.innerHTML += "<br>Most distributed session login mods are <b style=\"color: red;\">RATS</b>. You can check out <a href=\"https://github.com/DxxxxY/TokenAuth\">TokenAuth</a> for an opensource one."
+                if (/dupe|kmod|dmod/.test(file.name.toLowerCase())) results.innerHTML += "<br>Dupe mods <b style=\"color: red;\">aren't  public</b>. It is most likely a <b style=\"color: red;\">RAT</b>."
+            }
 
             results.innerHTML += `<br><i>${hash}</i>`
         }
