@@ -80,11 +80,11 @@ document.querySelector("*").addEventListener("drop", e => {
             collection.forEach(c => {
                 if (c.hash == hash) {
                     entry = c.name
-                    results.innerHTML = `File matches SHA256 hash of <b style="color: lime;">${entry}</b>`
+                    results.innerHTML = `${file.name} matches SHA256 hash of <b style="color: lime;">${entry}</b>`
                 }
             })
             if (!entry) {
-                results.innerHTML = "File <b style=\"color: red;\">doesn't match</b> any known SHA256 hashes."
+                results.innerHTML = `${file.name} <b style="color: red;">doesn't match</b> any known SHA256 hashes.`
                 if (/session|login|token/.test(file.name.toLowerCase())) results.innerHTML += "<br>Most distributed session login mods are <b style=\"color: red;\">RATS</b>. You can check out <a href=\"https://github.com/DxxxxY/TokenAuth\">TokenAuth</a> for an opensource one."
                 if (/dupe|kmod|dmod/.test(file.name.toLowerCase())) results.innerHTML += "<br>Dupe mods <b style=\"color: red;\">aren't  public</b>. It is most likely a <b style=\"color: red;\">RAT</b>."
             }
